@@ -24,4 +24,4 @@ jobs:
         name: Build and push
         uses: docker/bake-action@v4
         with:
-          files: env.hcl
+          files: env.hcl, docker-bake.hcl
