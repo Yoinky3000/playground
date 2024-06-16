@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0 # Required due to the way Git works, without it this action won't be able to find any or the correct tags
       - name: 'Get Previous tag'
         id: previoustag
-        run: git show-ref
+        run: git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1)
       # - 
       #   name: Test
       #   run: echo "ABC=\"$ABC\"" > env.hcl
