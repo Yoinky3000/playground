@@ -4,9 +4,9 @@ env:
   ABC: ${{github.ref_name}}
 
 on:
-  release:
-    types:
-      - published
+  push:
+    tags:
+    - '*'
 
 jobs:
   build:
