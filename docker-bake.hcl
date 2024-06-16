@@ -1,6 +1,7 @@
 target "default" {
     dockerfile = "./Dockerfile"
     args = {
-        TEST = "${ABC}"
+        CUR = "${ABC}"
+        PREV = "${PREVIOUS}"
     }
 }

@@ -4,9 +4,9 @@ env:
   ABC: ${{github.ref_name}}
 
 on:
-  push:
-    tags:
-    - '*'
+  release:
+    types:
+      - published
 
 jobs:
   build:
@@ -23,22 +23,14 @@ jobs:
         run: |
           echo $ABC
           echo ${{steps.previoustag.outputs.PREVIOUS}}
-      # - 
-      #   name: Test
-      #   run: echo "ABC=\"$ABC\"" > env.hcl
-      # -
-      #   name: 'Get Previous tag'
-      #   id: previoustag
-      #   # run: "echo \"Command result: $(ls)\""
-      #   run: git fetch --tags && git describe --tags --abbrev=0
-      # - 
-      #   name: Test2
-      #   run: echo ${{steps.previoustag.outputs}}
-      # -
-      #   name: Set up Docker Buildx
-      #   uses: docker/setup-buildx-action@v3
-      # -
-      #   name: Build and push
-      #   uses: docker/bake-action@v4
-      #   with:
-      #     files: env.hcl, docker-bake.hcl
+      - 
+        name: Test
+        run: echo -e "ABC=\"$ABC\"\nPREVIOUS=${{steps.previoustag.outputs.PREVIOUS}}" > env.hcl
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      -
+        name: Build and push
+        uses: docker/bake-action@v4
+        with:
+          files: env.hcl, docker-bake.hcl
