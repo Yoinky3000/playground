@@ -1,8 +1,5 @@
 name: Release Workflow
 
-env:
-  ABC: ${{github.ref_name}}
-
 on:
   release:
     types:
@@ -25,4 +22,6 @@ jobs:
         uses: docker/setup-buildx-action@v3
       -
         name: Build and push
+        env:
+          ABC: ${{github.ref_name}}
         uses: docker/bake-action@v4
