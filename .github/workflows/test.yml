@@ -1,5 +1,8 @@
 name: Release Workflow
 
+env:
+  ABC: ${{github.ref_name}}
+
 on:
   release:
     types:
