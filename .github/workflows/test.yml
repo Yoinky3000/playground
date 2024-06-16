@@ -23,8 +23,8 @@ jobs:
       -
         name: 'Get Previous tag'
         id: previoustag
-        run: "echo \"Command result: $(ls)\""
-        # run: git fetch --tags && git describe --tags --abbrev=0
+        # run: "echo \"Command result: $(ls)\""
+        run: git fetch --tags && git describe --tags --abbrev=0
       - 
         name: Test2
         run: echo ${{steps.previoustag.outputs}}
