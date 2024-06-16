@@ -14,8 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - 
+        name: Checkout code
         uses: actions/checkout@v2
+      - 
+        name: Test
+        run: echo $ABC
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
