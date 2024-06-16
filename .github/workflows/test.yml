@@ -14,15 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Get Latest Tag
-        id: latest_tag
-        run: echo ${GITHUB_REF}
-        
-      - name: Display Latest Tag
-        run: curl "https://api.github.com/repos/${{github.repository}}/tags" | jq -r '.[0].name'
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Required due to the way Git works, without it this action won't be able to find any or the correct tags
+      - name: 'Get Previous tag'
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
       # - 
       #   name: Test
       #   run: echo "ABC=\"$ABC\"" > env.hcl
