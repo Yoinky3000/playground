@@ -14,22 +14,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - 
-        name: Test
-        run: echo "ABC=\"$ABC\"" > env.hcl
-      -
-        name: 'Get Previous tag'
-        id: previoustag
-        # run: "echo \"Command result: $(ls)\""
-        run: git fetch --tags && git describe --tags --abbrev=0
-      - 
-        name: Test2
-        run: echo ${{steps.previoustag.outputs}}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      -
-        name: Build and push
-        uses: docker/bake-action@v4
-        with:
-          files: env.hcl, docker-bake.hcl
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get Latest Tag
+        id: latest_tag
+        run: echo "::set-output name=tag::$(git describe --tags --abbrev=0)"
+        
+      - name: Display Latest Tag
+        run: "echo \"Latest tag: ${{ steps.latest_tag.outputs.tag }}\""
+      # - 
+      #   name: Test
+      #   run: echo "ABC=\"$ABC\"" > env.hcl
+      # -
+      #   name: 'Get Previous tag'
+      #   id: previoustag
+      #   # run: "echo \"Command result: $(ls)\""
+      #   run: git fetch --tags && git describe --tags --abbrev=0
+      # - 
+      #   name: Test2
+      #   run: echo ${{steps.previoustag.outputs}}
+      # -
+      #   name: Set up Docker Buildx
+      #   uses: docker/setup-buildx-action@v3
+      # -
+      #   name: Build and push
+      #   uses: docker/bake-action@v4
+      #   with:
+      #     files: env.hcl, docker-bake.hcl
