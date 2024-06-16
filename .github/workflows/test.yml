@@ -22,7 +22,7 @@ jobs:
         run: echo ${GITHUB_REF}
         
       - name: Display Latest Tag
-        run: "echo \"Latest tag: ${{ steps.latest_tag.outputs.tag }}\""
+        run: curl "https://api.github.com/repos/${{github.repository}}/tags" | jq -r '.[0].name'
       # - 
       #   name: Test
       #   run: echo "ABC=\"$ABC\"" > env.hcl
