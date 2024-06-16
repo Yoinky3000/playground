@@ -22,7 +22,7 @@ jobs:
       - name: Test
         run: |
           echo $ABC
-          echo ${{steps.previoustag.outputs}}
+          echo ${{steps.previoustag.outputs.PREVIOUS}}
       # - 
       #   name: Test
       #   run: echo "ABC=\"$ABC\"" > env.hcl
