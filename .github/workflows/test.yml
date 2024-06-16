@@ -25,7 +25,7 @@ jobs:
           echo ${{steps.previoustag.outputs.PREVIOUS}}
       - 
         name: Test
-        run: echo -e "ABC=\"$ABC\"\nPREVIOUS=${{steps.previoustag.outputs.PREVIOUS}}" > env.hcl
+        run: echo -e "ABC=\"$ABC\"\nPREVIOUS=\"${{steps.previoustag.outputs.PREVIOUS}}\"" > env.hcl
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
