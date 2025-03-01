@@ -1,0 +1,6 @@
+# https://www48.polyu.edu.hk/myhkcc_new/me/addDrop/addDropVacy
+
+# https://www48.polyu.edu.hk/myhkcc_new/me/addDrop/verifyAddDrop
+aaa = {"rgstSubj":[{"subjCode":"LCH1047","subjTtl":"ENGLISH FOR ACADEMIC STUDIES (SCIENCE AND TECHNOLOGY) II","subjType":"G","cpulOrEle":"C","cr":3,"geDmn":null,"isChnRlt":false,"teachingMode":"Blended","subjGrp":"B05","noDrop":true},{"subjCode":"SEHH1049","subjTtl":"PHYSICS I","subjType":"G","cpulOrEle":"C","cr":3,"geDmn":"Cluster D","isChnRlt":false,"teachingMode":"F2F","subjGrp":"B02B","noDrop":true},{"subjCode":"SEHH1070","subjTtl":"STATISTICS AND VECTOR ALGEBRA","subjType":"G","cpulOrEle":"C","cr":3,"geDmn":"Cluster D","isChnRlt":false,"teachingMode":"F2F","subjGrp":"B05B","noDrop":true},{"subjCode":"SEHH2041","subjTtl":"APPLIED COMPUTING","subjType":"G","cpulOrEle":"C","cr":3,"geDmn":null,"isChnRlt":false,"teachingMode":"F2F","subjGrp":"B02C","noDrop":true},{"subjCode":"SEHH1016","subjTtl":"INTRODUCTION TO INTERNET TECHNOLOGY","subjType":"G","cpulOrEle":"E","cr":3,"geDmn":"Cluster D","isChnRlt":false,"teachingMode":"Blended","subjGrp":"B01A","noDrop":false}]}
+
+# https://www48.polyu.edu.hk/myhkcc_new/me/addDrop/confirmAddDrop

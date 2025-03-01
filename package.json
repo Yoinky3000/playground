@@ -9,12 +9,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@distube/ytdl-core": "^4.15.8",
+    "axios": "^1.7.9",
     "blessed": "^0.1.81",
-    "deep-diff": "^1.0.2"
+    "deep-diff": "^1.0.2",
+    "imagemin": "^9.0.0",
+    "imagemin-jpeg-recompress": "^7.1.0",
+    "imagemin-jpegtran": "^8.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.19",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
-  }
+  },
+  "packageManager": "yarn@4.5.3"
 }
